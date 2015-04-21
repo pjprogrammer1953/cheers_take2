@@ -38,3 +38,16 @@ The program then outputs the number of days until the user's birthday
 
 Awesome! Your birthday is in 45 days! Happy Birthday in advance!
 
+Modifications Phase 1
+Cheers_take2 project with TDD
+0 - arguments -> help msg
+1 arg w/valid name
+1 arg w/ birthday and no name
+1 arg all non words
+1 arg .cheers ""
+2 args name & monthname/day
+3 args ignore extra args
+2 args invalid invalid
+2 args valid valid
+2 args invalid valid
+2 args valid invalid

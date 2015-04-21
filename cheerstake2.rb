@@ -3,9 +3,10 @@ require "rubygems"
 require "bundler/setup"
 require "minitest"
 
-class 
+class
 
   def method_name
   	
   end
+
 end
