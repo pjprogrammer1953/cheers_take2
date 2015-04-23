@@ -63,10 +63,6 @@ EOS
   def test_06_date_validation
     output = `./cheers.rb Bill 99999999`
     expected = <<EOS
-Give me a... B
-Give me an... I
-Give me an... L
-Give me an... L
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
 EOS
@@ -85,13 +81,13 @@ EOS
 
 #Valid arguments
   def test_08_3_args_ignore_extra_args
-    output = `./cheers.rb Bill 04301960 Chattanooga`
+    output = `./cheers.rb Bill 1129 Chattanooga`
     expected = <<EOS
 Give me a... B
 Give me an... I
 Give me an... L
 Give me an... L
-Hi, Bill. There are 9 days until your birthday."
+Hi, Bill. There are 230 days until your birthday."
 EOS
     assert_equal expected, output
   end
@@ -128,8 +124,8 @@ EOS
 
 #Valid arguments - produce message
   def test_12_2_args_valid_valid
-    expected = `./cheers.rb Bill 04301960`
-    output = "Hi, Bill. There are 9 days until your birthday."
+    expected = `./cheers.rb Mike 1129`
+    output = "Hi, John. There are 210 days until your birthday."
     assert_equal expected, output
   end
 end
