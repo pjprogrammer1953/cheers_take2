@@ -14,12 +14,17 @@ end
 
 #birthday calculation
 def birthday_due_calculation(mmdd)
-  today = Time.new.yday 
-  userBirth = Date.strptime(mmdd, "%m%d").yday
-  if userBirth >= today
-     puts "Hi, XXXX. There are " + (userBirth - today).to_s + " until your birthday."
+#  today = Time.new.yday
+#  userBirth = Date.strftime(mmdd, "%m%d").yday
+  today = Time.new
+  tJulian = today.yday
+  userBirth = DateTime.parse(mmdd, "%m%d").yday
+  puts tJulian
+  puts userBirth
+  if userBirth >= tJulian
+     puts "Hi, XXXX. There are " + (userBirth - tJulian).to_s + " until your birthday."
   else
-     puts "Hi, YYYY. There are " + (365 - today + userBirth).to_s + " until your birthday."
+     puts "Hi, YYYY. There are " + (365 - tJulian + userBirth).to_s + " until your birthday."
   end
 end
 
