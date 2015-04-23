@@ -31,7 +31,7 @@ EOS
 
 #Valid name must accompany birthday
   def test_03_1_arg_w_birthday_and_no_name
-    output = `./cheers.rb 04301960`
+    output = `./cheers.rb 0430`
     expected = <<EOS
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
@@ -41,7 +41,7 @@ EOS
 
 #Valid arguments needed
   def test_04_1_arg_all_non_words
-    output = `./cheers.rb @@@@@ @@@@@@@@`
+    output = `./cheers.rb @@@@@ @@@@`
     expected = <<EOS
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
@@ -51,7 +51,7 @@ EOS
 
 #Valid arguments must accompany run command of './cheers'
   def test_05_1_arg_cheers_all_non_words
-    output = `./cheers.rb 77777 @@@@@@@@`
+    output = `./cheers.rb 77777 @@@@`
     expected = <<EOS
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
@@ -61,7 +61,7 @@ EOS
 
 #Date validation
   def test_06_date_validation
-    output = `./cheers.rb Bill 99999999`
+    output = `./cheers.rb Bill 9999`
     expected = <<EOS
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
@@ -71,7 +71,7 @@ EOS
 
 #Valid arguments
   def test_07_2_args_name_and_date_with_this_year
-    output = `./cheers.rb Bill 04302015`
+    output = `./cheers.rb Bill 0430`
     expected = <<EOS
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
@@ -94,7 +94,7 @@ EOS
 
 #Valid arguments
   def test_09_2_args_invalid_invalid
-    output = `./cheers.rb 77777 99999999`
+    output = `./cheers.rb 77777 9999`
     expected = <<EOS
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
@@ -104,7 +104,7 @@ EOS
 
 #Valid arguments
   def test_10_2_args_invalid_valid
-    output = `./cheers.rb 777777 04301960`
+    output = `./cheers.rb 777777 0430`
     expected = <<EOS
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
@@ -114,7 +114,7 @@ EOS
 
 #Valid arguments
   def test_11_2_args_valid_invalid
-    output = `./cheers.rb Bill 99999999`
+    output = `./cheers.rb Mike 9999`
     expected = <<EOS
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
@@ -125,7 +125,7 @@ EOS
 #Valid arguments - produce message
   def test_12_2_args_valid_valid
     expected = `./cheers.rb Mike 1129`
-    output = "Hi, John. There are 210 days until your birthday."
+    output = "Hi, Mike. There are 210 days until your birthday."
     assert_equal expected, output
   end
 end
