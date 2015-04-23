@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+require 'date'
+
+args = ARGV
+
 def exit_with_usage_instructions
   puts <<EOS
 Please enter your name and your birthday.
