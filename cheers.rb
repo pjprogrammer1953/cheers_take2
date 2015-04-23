@@ -11,11 +11,11 @@ end
 #birthday calculation
 def birthday_due_calculation(mmdd)
   today = Time.new.yday 
-  userBirth = Date.strptime(mmdd, "%m/%d").yday
+  userBirth = Date.strptime(mmdd, "%m%d").yday
   if userBirth >= today
-     puts "Hi Bill. There are " + (userDays - today) + " until your birthday."
+     puts "Hi, XXXX. There are " + (userBirth - today).to_s + " until your birthday."
   else
-     puts "Hi Bill. There are " + (365 - today + userBirth) + " until your birthday."
+     puts "Hi, YYYY. There are " + (365 - today + userBirth).to_s + " until your birthday."
   end
 end
 
