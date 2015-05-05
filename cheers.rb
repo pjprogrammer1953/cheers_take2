@@ -18,7 +18,7 @@ def birthday_due_calculation(mmdd)
 #  userBirth = Date.strftime(mmdd, "%m%d").yday
   today = Time.new
   tJulian = today.yday
-  userBirth = DateTime.parse(mmdd, "%m%d").yday
+  userBirth = DateTime.parse(mmdd, "%m/%d").yday
   puts tJulian
   puts userBirth
   if userBirth >= tJulian

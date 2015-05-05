@@ -124,7 +124,7 @@ EOS
 
 #Valid arguments - produce message
   def test_12_2_args_valid_valid
-    expected = `./cheers.rb Mike 1129`
+    expected = `./cheers.rb Mike 11/29`
     output = "Hi, Mike. There are 210 days until your birthday."
     assert_equal expected, output
   end
