@@ -13,20 +13,20 @@ EOS
 end
 
 #birthday calculation
-def birthday_due_calculation(mmdd)
+#def birthday_due_calculation(mmdd)
 #  today = Time.new.yday
 #  userBirth = Date.strftime(mmdd, "%m%d").yday
-  today = Time.new
-  tJulian = today.yday
-  userBirth = DateTime.parse(mmdd, "%m/%d").yday
-  puts tJulian
-  puts userBirth
-  if userBirth >= tJulian
-     puts "Hi, XXXX. There are " + (userBirth - tJulian).to_s + " until your birthday."
-  else
-     puts "Hi, YYYY. There are " + (365 - tJulian + userBirth).to_s + " until your birthday."
-  end
-end
+#  today = Time.new
+#  tJulian = today.yday
+#  userBirth = DateTime.parse(mmdd, "%m/%d").yday
+#  puts tJulian
+#  puts userBirth
+#  if userBirth >= tJulian
+#     puts "Hi, XXXX. There are " + (userBirth - tJulian).to_s + " until your birthday."
+#  else
+#     puts "Hi, YYYY. There are " + (365 - tJulian + userBirth).to_s + " until your birthday."
+#  end
+#end
 
 exit_with_usage_instructions if ARGV.empty?
 
@@ -40,7 +40,7 @@ exit_with_usage_instructions if ARGV.size < 2
 exit_with_usage_instructions if ARGV[1].size > 5
 
 if ARGV.size >= 2
-  birthday_due_calculation(ARGV[2])
+# birthday_due_calculation(ARGV[2])
 end
 
 cheerable_name.each_char do |char|

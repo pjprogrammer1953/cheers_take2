@@ -12,6 +12,16 @@ class TestCheersIntegration < Minitest::Test
 #Valid arguments
   def test_01_zero_args_help_message
     output = `./cheers.rb`
+    expected << "Give me an.. E!\n"
+    expected << "Give me an.. D!\n"
+    expected << "Ed's just GRAND!\n"
+    assert_equal expected, output
+  end
+
+
+#Valid arguments
+  def test_01_zero_args_help_message
+    output = `./cheers.rb`
     expected = <<EOS
 Please enter your name and your birthday.
 Try again with `./cheers.rb [Name] [MM/DD Birthday]`
@@ -63,8 +73,13 @@ EOS
   def test_06_date_validation
     output = `./cheers.rb Bill 9999`
     expected = <<EOS
-Please enter your name and your birthday.
-Try again with `./cheers.rb [Name] [MM/DD Birthday]`
+Give me a... B
+Give me an... I
+Give me an... L
+Give me an... L
+Bill’s just GRAND!
+
+I would wish you a Happy Birthday, if I knew when that was!
 EOS
     assert_equal expected, output
   end
@@ -73,24 +88,31 @@ EOS
   def test_07_2_args_name_and_date_with_this_year
     output = `./cheers.rb Bill 0430`
     expected = <<EOS
-Please enter your name and your birthday.
-Try again with `./cheers.rb [Name] [MM/DD Birthday]`
+Give me a... B
+Give me an... I
+Give me an... L
+Give me an... L
+Bill’s just GRAND!
+
+I would wish you a Happy Birthday, if I knew when that was!
 EOS
     assert_equal expected, output
   end
 
 #Valid arguments
-  def test_08_3_args_ignore_extra_args
-    output = `./cheers.rb Bill 1129 Chattanooga`
-    expected = <<EOS
-Give me a... B
-Give me an... I
-Give me an... L
-Give me an... L
-Hi, Bill. There are 230 days until your birthday."
-EOS
-    assert_equal expected, output
-  end
+#  def test_08_3_args_ignore_extra_args
+#    output = `./cheers.rb Bill 1129 Chattanooga`
+#    expected = <<EOS
+#Give me a... B
+##Give me an... I
+#Give me an... L
+#Give me an... L
+#Bill’s just GRAND!
+#
+#Hi, Bill. There are 230 days until your birthday."
+#EOS
+#    assert_equal expected, output
+#  end
 
 #Valid arguments
   def test_09_2_args_invalid_invalid
@@ -116,16 +138,21 @@ EOS
   def test_11_2_args_valid_invalid
     output = `./cheers.rb Mike 9999`
     expected = <<EOS
-Please enter your name and your birthday.
-Try again with `./cheers.rb [Name] [MM/DD Birthday]`
+Give me an... M
+Give me an... I
+Give me a... K
+Give me an... E
+Mike’s just GRAND!
+
+I would wish you a Happy Birthday, if I knew when that was!
 EOS
     assert_equal expected, output
   end
 
 #Valid arguments - produce message
-  def test_12_2_args_valid_valid
-    expected = `./cheers.rb Mike 11/29`
-    output = "Hi, Mike. There are 210 days until your birthday."
-    assert_equal expected, output
-  end
+  #def test_12_2_args_valid_valid
+  #  expected = `./cheers.rb Mike 11/29`
+  #  output = "Hi, Mike. There are 210 days until your birthday."
+  #  assert_equal expected, output
+  #end
 end
